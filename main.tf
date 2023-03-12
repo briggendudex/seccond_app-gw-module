@@ -105,6 +105,6 @@ value = azurerm_public_ip.app_gateway_public_ip.ip_address
 }
 
 output "app_gateway_backend_pool_id" {
-value = azurerm_lb_backend_address_pool.backend_pool[count.index].id
+value = azurerm_lb_backend_address_pool.backend_pool[0].id
 
 }
