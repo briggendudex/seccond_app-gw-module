@@ -29,6 +29,9 @@ resource "azurerm_lb_backend_address_pool" "backend_pool" {
   backend_ips         = var.backend_ips
   key_vault_url       = var.key_vault_url
   count               = var.create_backend_pool ? 1 : 0
+  depends_on = [
+    azurerm_application_gateway.app_gateway
+  ]
 }
 
 # Create the Application Gateway
