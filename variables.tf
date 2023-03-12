@@ -46,6 +46,11 @@ variable "key_vault_url" {
   description = "The URL of the key vault to use for SSL certificates."
 }
 
+variable "key_vault_id" {
+  description = "id for key vault"
+  
+}
+
 variable "http_listener_name" {
   description = "The name of the HTTP listener to create."
 }
