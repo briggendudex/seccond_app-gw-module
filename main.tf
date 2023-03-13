@@ -69,12 +69,12 @@ resource "azurerm_application_gateway" "app_gateway" {
     protocol              = "Http"
     request_timeout       = 60
   }
-  http_listener {
-    name                           = var.http_listener_name
-    frontend_ip_configuration_name = var.frontend_ip_configuration_name
-    frontend_port_name             = var.frontend_port_name
-    protocol                       = var.listener_protocol
-  }
+  # http_listener {
+  #   name                           = var.http_listener_name
+  #   frontend_ip_configuration_name = var.frontend_ip_configuration_name
+  #   frontend_port_name             = var.frontend_port_name
+  #   protocol                       = var.listener_protocol
+  # }
   https_listener {
     name                            = var.https_listener_name
     frontend_ip_configuration_name  = var.frontend_ip_configuration_name
