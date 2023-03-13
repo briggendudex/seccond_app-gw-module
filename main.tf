@@ -25,7 +25,7 @@ resource "azurerm_public_ip" "app_gateway_public_ip" {
 resource "azurerm_lb_backend_address_pool" "backend_pool" {
   name                = var.backend_pool_name
   #resource_group_name = azurerm_resource_group.name
-  loadbalancer_id     = azurerm_application_gateway.app_gateway.id
+  loadbalancer_id     = azurerm_application_gateway.app_gateway.id  #azurerm_application_gateway.app_gateway.id
   #backend_ips         = var.backend_ips
   #key_vault_url       = var.key_vault_url
   #key_vault_id          = var.key_vault_id
@@ -71,7 +71,7 @@ resource "azurerm_application_gateway" "app_gateway" {
   #   frontend_port_name             = var.frontend_port_name
   #   protocol                       = var.listener_protocol
   # }
-  http_listener {
+  https_listener {
     name                            = var.https_listener_name
     frontend_ip_configuration_name  = var.frontend_ip_configuration_name
     frontend_port_name              = var.frontend_port_name
