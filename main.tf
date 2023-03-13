@@ -81,8 +81,7 @@ resource "azurerm_application_gateway" "app_gateway" {
     frontend_port_name              = var.frontend_port_name
     protocol                        = var.listener_protocol
     ssl_certificate_name            = var.ssl_certificate
-    require_server_name_indication  = true
-    count                           = var.create_https_listener ? 1 : 0
+    
   }
   request_routing_rule {
     name                       = var.request_routing_rule_name
